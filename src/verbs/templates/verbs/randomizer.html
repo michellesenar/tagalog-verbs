@@ -1,0 +1,39 @@
+{% extends 'verbs/base.html' %}
+
+{% load static %} 
+<link rel="stylesheet" href="{% static 'js/app.js' %}">
+
+{% block content %}
+		<h3>Translate: {{ random_verb.english }}</h3>
+		<p>Your answer: <input type="text" name="guess"></p>
+
+		{% for p in possible_answers %}
+			<br>
+			<button type="button" class="collapsible">Check Answer</button>
+			<div class="content">
+				<p>{{p.french}}</p>
+			</div>
+		{% endfor %}
+		<div>
+			<br>
+			<a href="{% url 'randomizer'  %}">Try another verb</a>
+		</div>
+
+		<script type="text/javascript">
+			var coll = document.getElementsByClassName("collapsible");
+			var i;
+
+			for (i = 0; i < coll.length; i++) {
+				coll[i].addEventListener("click", function() {
+					this.classList.toggle("active");
+					var content = this.nextElementSibling;
+					console.log(content)
+					if (content.style.display === "block") {
+					content.style.display = "none";
+					} else {
+					content.style.display = "block";
+					}
+				});
+			}
+		</script>
+{% endblock %}

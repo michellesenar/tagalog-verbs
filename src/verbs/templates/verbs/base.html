@@ -1,0 +1,20 @@
+{% load static %}
+
+<html>
+	<head>
+	<title>Verb of the Day</title>
+	<link rel="stylesheet" href="{% static 'css/verbs.css' %}">
+	<link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+	<link href='//fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+
+	</head>
+
+	<body>
+	    {% block content %}
+	    {% endblock %}
+		<h5><a href="{% url 'home'  %}">Home</a></h5>
+	</body>
+
+	<footer>
+	<h6>&copy <a href='https://michellesenar.github.io/'>Michelle Senar</a> 2017</h6>
+	</footer>

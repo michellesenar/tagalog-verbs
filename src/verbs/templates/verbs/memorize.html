@@ -1,0 +1,9 @@
+{% extends 'verbs/base.html' %}
+
+{% block content %}
+		{% for v in verbs %}
+		<p> <b>{{ v.english }}</b> : {{ v.french }} : <textarea>Practice using</textarea> : <a href="{% url 'conjugation' verb_pk=v.id %}" target="_blank">Conjugate</a></p>
+		{% endfor %}
+		<p><a href="{% url 'memorize'  %}">View more verbs</a></p>
+		<p><a href="{% url 'randomizer'  %}">Quiz yourself</a></p>
+{% endblock %}

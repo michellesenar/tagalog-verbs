@@ -1,0 +1,9 @@
+{% extends 'verbs/base.html' %}
+
+{% block content %}
+	<h1>Verb Quiz</h1>
+
+	<h3>I made this site to help with memorizing common verbs.</h3>
+	<p><a href="{% url 'about' %}">About</a></p>
+	<p><a href="{% url 'randomizer' %}">Verb Randomizer</a></p>
+{% endblock %}

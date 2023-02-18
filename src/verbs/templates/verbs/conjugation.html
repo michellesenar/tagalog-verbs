@@ -1,0 +1,42 @@
+{% extends 'verbs/base.html' %}
+
+{% block content %}
+<h1>Conjugate: {{ verb.french }}<h1>
+<h6><i>italique: tense littéraire</i></h6>
+<h4>With pronoun: {{ pr }} </h4>
+
+{% with pr=pr.1 eng=pr.0 %}
+
+<h4>Indicatif</h4>
+Présent (Maintenant, {{ pr }}  ___): <input type="text"><br>
+Imparfait (Hier, {{ pr }} ___ quand il y a eu...): <input type="text"><br>
+<i>Passé simple:</i> <input type="text"><br>
+Futur simple (Demain, {{ pr }} ___): <input type="text"><br>
+
+<h4>Formes composées</h4>
+Passé composé (Hier, {{ pr }} ___): <input type="text"><br>
+Plus-que-parfait ("{{ eng }} had ___"): <input type="text"><br>
+<i>Passé antérieur:</i> <input type="text"><br>
+Futur antérieur (Demain à cette heure, {{ pr }}  ___): <input type="text"><br>
+
+<h4>Subjonctif</h4>
+Subjonctif présent (Il faut que {{ pr }} ___): <input type="text"><br>
+<i>Subjonctif imparfait:</i> <input type="text"><br>
+Subjonctif passé (Il fallait que {{ pr }} ___): <input type="text"><br>
+<i>Subjonctif plus-que-parfait:</i> <input type="text"><br>
+
+<h4>Conditionnel</h4>
+Conditionnel présent ({{ pr|title }} ___ si...): <input type="text"><br>
+Conditionnel passé (S'il y avait assez de temps, {{ pr }} ___): <input type="text"><br>
+<i>Conditionnel passé 2:</i> <input type="text"><br>
+
+<h4>Impératif</h4>
+Impératif (tu): <input type="text"><br>
+Impératif (nous): <input type="text"><br>
+Impératif (vous): <input type="text"><br>
+<i>Impératif + passé:</i> <input type="text"><br>
+{% endwith %}
+
+<p> <a href="{{ verb_url }}" target="_blank">Check Answers</a> </p>
+<p><a href="{% url 'randomizer'  %}">Try another verb</a></p>
+{% endblock %}
