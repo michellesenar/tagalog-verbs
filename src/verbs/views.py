@@ -30,11 +30,10 @@ def randomizer(request):
     english = random_verb.english
 
     possible_answers = models.Verb.objects.filter(english=english).all()
-    possible_answers = models.Verb.objects.get(id=1)
     return render(
         request,
         "verbs/randomizer.html",
-        {"random_verb": random_verb, "possible_answers": [random_verb]},
+        {"random_verb": random_verb, "possible_answers": possible_answers},
     )
 
 
