@@ -6,3 +6,6 @@ class Verb(models.Model):
     english = models.CharField(max_length=40)
     root = models.CharField(max_length=40)
     root_ascii = models.CharField(max_length=40)
+    actor_past = models.CharField(max_length=40, default="")
+    actor_present = models.CharField(max_length=40, default="")
+    actor_future = models.CharField(max_length=40, default="")

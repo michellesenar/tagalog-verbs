@@ -9,9 +9,21 @@
 
 		{% for p in possible_answers %}
 			<br>
-			<button type="button" class="collapsible">Check Answer</button>
-			<div class="content">
-				<p>{{p.root}}</p>
+			Possible Answer:<br>
+			<div>
+				<button type="button" class="collapsible">Check Answer</button>
+				<div class="content">
+					<p>{{p.root}}</p>
+				</div>
+			</div>
+
+			<br>
+
+			<div>
+				<button type="button" class="collapsible">Conjugate</button>
+				<div class="content">
+					<p>{{p.actor_past}}, {{p.actor_present}}, {{p.actor_future}}</p>
+				</div>
 			</div>
 		{% endfor %}
 		<div>
