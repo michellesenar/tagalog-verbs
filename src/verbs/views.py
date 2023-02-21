@@ -1,8 +1,10 @@
 import random
 
 from django.shortcuts import render
+from rest_framework import viewsets
 
-from . import models
+
+from . import models, serializers
 
 import logging
 
@@ -18,6 +20,14 @@ PRONOUNS = [
 ]
 
 VERBCOUNT = 154
+
+
+class VerbViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = models.Verb.objects.all()
+    serializer_class = serializers.VerbSerializer
 
 
 def home(request):

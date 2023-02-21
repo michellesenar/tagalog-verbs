@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 requirements = [
     "Django",
-    "dj_database_url",
+    "django-rest-framework",
     "gunicorn",
     "psycopg2",
     "python-dotenv",
