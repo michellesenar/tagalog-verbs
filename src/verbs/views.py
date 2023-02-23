@@ -19,7 +19,7 @@ PRONOUNS = [
     ("they", "sila"),
 ]
 
-VERBCOUNT = 154
+VERBCOUNT = 72
 
 
 class VerbViewSet(viewsets.ModelViewSet):

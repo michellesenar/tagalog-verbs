@@ -5,7 +5,7 @@ from django.core.management.base import BaseCommand
 
 from verbs.models import Verb
 
-real_file = "tagalog-um-verbs.csv"
+real_file = "common-um-verbs.csv"
 
 
 class Command(BaseCommand):
